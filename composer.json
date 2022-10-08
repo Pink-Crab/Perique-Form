@@ -1,0 +1,57 @@
+{
+    "name": "pinkcrab/perique-form",
+    "type": "library",
+    "description": "A Form builder and handler for the Perique Plugin Framework",
+    "keywords": [],
+    "homepage": "https://pinkcrab.co.uk",
+    "license": "MIT",
+    "authors": [{
+        "name": "Glynn Quelch",
+        "email": "glynn.quelch@pinkcrab.co.uk",
+        "homepage": "http://clappo.co.uk",
+        "role": "Developer"
+    }],
+    "autoload": {
+        "psr-4": {
+            "PinkCrab\\Form\\": "src"
+        },
+        "files": []
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PinkCrab\\Form\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0 || ^8.0",
+        "phpstan/phpstan": "^1.0",
+        "szepeviktor/phpstan-wordpress": "^1.0",
+        "php-stubs/wordpress-stubs": "^6.0 || ^5.9",
+        "roots/wordpress": "^6.0",
+        "wp-phpunit/wp-phpunit": "^6.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "object-calisthenics/phpcs-calisthenics-rules": "*",
+        "yoast/phpunit-polyfills": "^0.2.0 || ^1.0.0",
+        "symfony/var-dumper": "*",
+        "gin0115/wpunit-helpers": "~1",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "pinkcrab/perique-framework-core": "1.3.*"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always --testdox --coverage-clover clover.xml",
+        "coverage": "vendor/bin/phpunit --colors=always --testdox --coverage-html coverage-report",
+        "analyse": "vendor/bin/phpstan analyse src -l8",
+        "sniff": "./vendor/bin/phpcs src/ -v",
+        "all": "composer coverage && composer analyse && composer sniff"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "roots/wordpress-core-installer": true
+        }
+    }
+}
