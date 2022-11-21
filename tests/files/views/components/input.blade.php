@@ -1,1 +1,0 @@
-<input name="{{$name}}" id="{{$id}}" value="{{$value}}" type="{{$type}}" />

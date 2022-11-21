@@ -8,3 +8,5 @@ coverage.xml
 compiles
 .phpunit.result.cache
 tests/.env
+plugin.php
+sandbox.php
